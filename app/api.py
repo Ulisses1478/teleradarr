@@ -1,6 +1,6 @@
 from .config import CONFIG
 import requests, urllib.parse as urllib
-import json as jj
+
 class radarr:
     def __init__(self):
         self.baseUrl = CONFIG['radarr']['baseUrl']
