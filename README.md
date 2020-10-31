@@ -1,8 +1,8 @@
 # Teleradarr
 
-### How to use
+## How to use
 
-#### Config the application
+### Config the application
 To start the server you need to first config the file located in app/config_example.py and rename it to config.py
 
 ```
@@ -25,19 +25,19 @@ Run the commands
 and 
 ```/setinlinefeedback```
 
-### Running the application
+## Running the application
 I made it as simple as possible
 
 You will only need python3
 
-#### Install the requirements
+### Install the requirements
 Can be pip3 in your case
 
 ```
 pip install -r requirements.txt
 ```
 
-#### Start command
+### Start command
 Can be python3 in your case
 
 ```
