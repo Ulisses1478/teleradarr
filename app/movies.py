@@ -32,12 +32,13 @@ def query_text(inline_query):
 
 	for index, movie in enumerate(moviesQuery):
 		title = movie.get('title')
+		remotePoster = movie.get('remotePoster')
 		movies.append(
 			types.InlineQueryResultArticle(
 				index,
 				movie.get('title'),
-				types.InputTextMessageContent(f'Oi {inline_query.from_user.first_name}, já estou baixando o filme {title} pra você'),
-				thumb_url=movie.get('remotePoster'),
+				types.InputTextMessageContent(f'Oi {inline_query.from_user.first_name}, já estou baixando o filme {title} pra você /n {remotePoster}'),
+				thumb_url=remotePoster,
 				thumb_height=1050,
 				thumb_width=700
 			)
