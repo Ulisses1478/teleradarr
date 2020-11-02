@@ -19,6 +19,7 @@ def test_chosen(chosen_inline_result):
 	movie = moviesQuery[int(chosen_inline_result.result_id)]
 
 	# Add movie and log
+	api.addMovie(movie)
 	print(chosen_inline_result.from_user.first_name+' Added the movie: ' + movie.get('title'))
 
 	# # Alert
