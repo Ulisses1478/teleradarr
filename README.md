@@ -1,5 +1,8 @@
 # Teleradarr
 
+## Contribution
+This software is 100% free and I made it as a side project, the bot conversation it doesn't even exists and if you wan't to help to make this bot check the to-do down there and make your commit
+
 ## How to install
 
 ### Config the application
@@ -50,3 +53,9 @@ To use the bot is very simple after getting the bot with the right permissions, 
 ```
 @BOT_NAME NAME_OF_THE_MOVIE
 ```
+
+### TO-DO
+- [x] Radarr inline integration
+- [] Sonarr inline integration
+- [] Automated tests
+- [] Sonarr & Raddar chat integration
