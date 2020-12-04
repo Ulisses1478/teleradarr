@@ -1,6 +1,6 @@
 # Teleradarr
 
-## How to use
+## How to install
 
 ### Config the application
 To start the server you need to first config the file located in app/config_example.py and rename it to config.py
@@ -42,4 +42,11 @@ Can be python3 in your case
 
 ```
 python startBot.py
+```
+
+### Usage
+To use the bot is very simple after getting the bot with the right permissions, you need to run
+
+```
+@BOT_NAME NAME_OF_THE_MOVIE
 ```
