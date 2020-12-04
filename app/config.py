@@ -9,11 +9,13 @@ if not radarrIp:
 if not radarrPort:
 	print('No port specified')
 
+radarrUrl = '{radarrIp}:{radarrPort}'
+
 if radarrCustomPath:
 	radarrUrl += radarrCustomPath
 
 
-# The os.getenv and raddarUrl is when used in docker 	
+# The os.getenv and raddarUrl is when used in docker
 CONFIG = {
     'radarr':{
         'baseUrl':radarrUrl or 'http://ip:port/radarr', # NO SLASH AT THE END
@@ -23,4 +25,3 @@ CONFIG = {
         'botToken':os.getenv('TELEGRAM_BOT_TOKEN', 'number:something')  # Get with telegram BotFatheR
     }
 }
-
