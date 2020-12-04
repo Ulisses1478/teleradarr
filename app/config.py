@@ -9,7 +9,7 @@ if not radarrIp:
 if not radarrPort:
 	print('No port specified')
 
-radarrUrl = '{radarrIp}:{radarrPort}'
+radarrUrl = f'{radarrIp}:{radarrPort}'
 
 if radarrCustomPath:
 	radarrUrl += radarrCustomPath
