@@ -56,6 +56,6 @@ To use the bot is very simple after getting the bot with the right permissions, 
 
 ### TO-DO
 - [x] Radarr inline integration
-- [] Sonarr inline integration
-- [] Automated tests
-- [] Sonarr & Raddar chat integration
+- [ ] Sonarr inline integration
+- [ ] Automated tests
+- [ ] Sonarr & Raddar chat integration
