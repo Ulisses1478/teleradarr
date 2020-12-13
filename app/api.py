@@ -5,6 +5,7 @@ class radarr:
     def __init__(self):
         self.baseUrl = CONFIG['radarr']['baseUrl']
         self.apiKey = CONFIG['radarr']['apiKey']
+        self.profileId = CONFIG['radarr']['profileId']
 
     def get(self, endpoint, params=None):
         if params:
@@ -31,11 +32,14 @@ class radarr:
             return data[:limit]
         else:
             return data
+    
+    def getProfiles(self):
+        return self.get('/v3/qualityprofile')
 
     def addMovie(self, movie):
         movie.update({
         "monitored":True,
-        "profileId": 4,
+        "profileId": self.profileId,
         "episodeFileCount": 0,
         "episodeCount": 0,
         "isExisting": False,
