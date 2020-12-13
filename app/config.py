@@ -20,7 +20,7 @@ CONFIG = {
     'radarr':{
         'baseUrl':radarrUrl or 'http://ip:port/radarr', # NO SLASH AT THE END
         'apiKey':os.getenv('RADARR_API_KEY', '7ay7dfas7df79ab70742709471907asdf'), # Can be found in credentials
-		'profileId':radarrProfileId
+		'profileId':radarrProfileId or '1'
 	},
     'telegram':{
         'botToken':os.getenv('TELEGRAM_BOT_TOKEN', 'number:something')  # Get with telegram BotFatheR
