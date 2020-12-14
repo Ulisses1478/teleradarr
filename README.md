@@ -55,14 +55,16 @@ To use the bot is very simple after getting the bot with the right permissions, 
 ```
 
 ### Docker Variables
-Variable Name | Default | What it does
-RADARR_IP | Null | Set radarr instance ip
-RADARR_PORT | Null | Set radarr instance port
-RADARR_API_KEY | Null | Set radarr api key
-RADARR_PROFILE_ID | 1 (Any) | Change default radarr profile
-RADARR_CUSTOM_PATH | Null | Change default path for radarr like ip:port/path/
-RADARR_CUSTOM_FOLDER | /media/movies | Change the save folder for radarr
-TELEGRAM_BOT_TOKEN | Null | Set Telegram api key
+| Variable Name | Default | What it does
+| ------------- |:-------------:| -----:|
+| RADARR_IP | Null | Set radarr instance ip|
+| RADARR_PORT | Null | Set radarr instance port|
+| RADARR_API_KEY | Null | Set radarr api key|
+| RADARR_PROFILE_ID | 1 (Any) | Change default radarr profile|
+| RADARR_CUSTOM_PATH | Null | Change default path for radarr like ip:port/path/|
+| RADARR_CUSTOM_FOLDER | /media/movies | Change the save folder for radarr|
+| Telegram |:-------------:| -----:|
+|TELEGRAM_BOT_TOKEN | Null | Set Telegram api key|
 
 radarrProfileId = os.getenv('RADARR_PROFILE_ID')
 ### TO-DO
