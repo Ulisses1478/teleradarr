@@ -6,6 +6,7 @@ class radarr:
         self.baseUrl = CONFIG['radarr']['baseUrl']
         self.apiKey = CONFIG['radarr']['apiKey']
         self.profileId = CONFIG['radarr']['profileId']
+        self.customFolder = CONFIG['radarr']['folder']
 
     def get(self, endpoint, params=None):
         if params:
@@ -32,7 +33,7 @@ class radarr:
             return data[:limit]
         else:
             return data
-    
+
     def getProfiles(self):
         return self.get('/v3/qualityprofile')
 
@@ -45,7 +46,7 @@ class radarr:
         "isExisting": False,
         "saved": False,
         "deleted": False,
-        "rootFolderPath": "/media/movies",
+        "rootFolderPath": self.customFolder,
         "addOptions": {
             "ignoreEpisodesWithFiles":False,
             "ignoreEpisodesWithoutFiles":False,

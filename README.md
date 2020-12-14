@@ -23,9 +23,9 @@ CONFIG = {
 ### Telegram config
 It is 100% necessary that you after creating your bot with BotFather
 
-Run the commands 
+Run the commands
 ```/setinline```
-and 
+and
 ```/setinlinefeedback```
 
 ## Running the application
@@ -54,6 +54,17 @@ To use the bot is very simple after getting the bot with the right permissions, 
 @BOT_NAME NAME_OF_THE_MOVIE
 ```
 
+### Docker Variables
+Variable Name | Default | What it does
+RADARR_IP | Null | Set radarr instance ip
+RADARR_PORT | Null | Set radarr instance port
+RADARR_API_KEY | Null | Set radarr api key
+RADARR_PROFILE_ID | 1 (Any) | Change default radarr profile
+RADARR_CUSTOM_PATH | Null | Change default path for radarr like ip:port/path/
+RADARR_CUSTOM_FOLDER | /media/movies | Change the save folder for radarr
+TELEGRAM_BOT_TOKEN | Null | Set Telegram api key
+
+radarrProfileId = os.getenv('RADARR_PROFILE_ID')
 ### TO-DO
 - [x] Radarr inline integration
 - [ ] Sonarr inline integration
