@@ -63,8 +63,7 @@ To use the bot is very simple after getting the bot with the right permissions, 
 | RADARR_PROFILE_ID | 1 (Any) | Change default radarr profile|
 | RADARR_CUSTOM_PATH | Null | Change default path for radarr like ip:port/path/|
 | RADARR_CUSTOM_FOLDER | /media/movies | Change the save folder for radarr|
-| Telegram |:-------------:| -----:|
-|TELEGRAM_BOT_TOKEN | Null | Set Telegram api key|
+| TELEGRAM_BOT_TOKEN | Null | Set Telegram api key|
 
 radarrProfileId = os.getenv('RADARR_PROFILE_ID')
 ### TO-DO
