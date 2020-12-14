@@ -65,7 +65,6 @@ To use the bot is very simple after getting the bot with the right permissions, 
 | RADARR_CUSTOM_FOLDER | /media/movies | Change the save folder for radarr|
 | TELEGRAM_BOT_TOKEN | Null | Set Telegram api key|
 
-radarrProfileId = os.getenv('RADARR_PROFILE_ID')
 ### TO-DO
 - [x] Radarr inline integration
 - [ ] Sonarr inline integration
