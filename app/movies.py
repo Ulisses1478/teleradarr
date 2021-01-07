@@ -8,7 +8,7 @@ bot = telebot.TeleBot(CONFIG['telegram']['botToken'])
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-	bot.reply_to(message, f'Oi {message.from_user.first_name}, como vai você?')
+	bot.reply_to(message, f'Hi {message.from_user.first_name}, how are you doing?')
 
 @bot.chosen_inline_handler(func=lambda chosen_inline_result: True)
 def test_chosen(chosen_inline_result):
@@ -24,7 +24,7 @@ def test_chosen(chosen_inline_result):
 
 	# # Alert
 	# title = movie.get('title') # Movie name
-	# bot.reply_to(chosen_inline_result, f'Oi {chosen_inline_result.from_user.first_name}, já estou baixando o filme {title} pra você')
+	# bot.reply_to(chosen_inline_result, f'Hi {inline_query.from_user.first_name}, I\'m already downloading the movie {title} for you.')
 
 @bot.inline_handler(lambda query: query.query)
 def query_text(inline_query):
@@ -38,7 +38,7 @@ def query_text(inline_query):
 			types.InlineQueryResultArticle(
 				index,
 				movie.get('title'),
-				types.InputTextMessageContent(f'Oi {inline_query.from_user.first_name}, já estou baixando o filme {title} pra você /n {remotePoster}'),
+				types.InputTextMessageContent(f'Hi {inline_query.from_user.first_name}, I\'m already downloading the movie {title} for you. /n {remotePoster}'),
 				thumb_url=remotePoster,
 				thumb_height=1050,
 				thumb_width=700
