@@ -41,8 +41,9 @@ class radarr:
         movie.update({
         "qualityProfileId": self.profileId,
         "rootFolderPath": self.customFolder,
+        "monitored": true,
         "addOptions": {
-            "searchForMovie":True
+            "searchForMovie":true
         },
         })
         response = self.post('/movie', json=movie)
