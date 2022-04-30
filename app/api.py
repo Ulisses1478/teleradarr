@@ -8,6 +8,7 @@ class radarr:
         self.profileId = CONFIG['radarr']['profileId']
         self.customFolder = CONFIG['radarr']['folder']
 
+
     def get(self, endpoint, params=None):
         if params:
             params['apikey'] = self.apiKey
@@ -18,7 +19,7 @@ class radarr:
             'apikey':self.apiKey
         }
 
-        response = requests.post(self.baseUrl + '/api' + endpoint, params=params, json=json)
+        response = requests.post(self.baseUrl + '/api/v3' + endpoint, params=params, json=json)
 
         if response.status_code not in ['200', '201']:
             return False
