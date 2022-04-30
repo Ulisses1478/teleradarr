@@ -26,7 +26,7 @@ class radarr:
         return response.json()
 
     def searchMovies(self, term, limit=0):
-        data = self.get('/movie/lookup/', {
+        data = self.get('/v3/movie/lookup/', {
             'term':term
         })
         if limit > 0:
@@ -53,7 +53,7 @@ class radarr:
             "searchForMovie":True
         },
         })
-        response = self.post('/movie', json=movie)
+        response = self.post('/v3/movie', json=movie)
 
         if response:
             return True
