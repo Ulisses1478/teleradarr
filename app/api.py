@@ -8,17 +8,18 @@ class radarr:
         self.profileId = CONFIG['radarr']['profileId']
         self.customFolder = CONFIG['radarr']['folder']
 
+
     def get(self, endpoint, params=None):
         if params:
             params['apikey'] = self.apiKey
-        return requests.get(self.baseUrl + '/api' + endpoint, params=params).json()
+        return requests.get(self.baseUrl + '/api/v3' + endpoint, params=params).json()
 
     def post(self, endpoint, json):
         params = {
             'apikey':self.apiKey
         }
 
-        response = requests.post(self.baseUrl + '/api' + endpoint, params=params, json=json)
+        response = requests.post(self.baseUrl + '/api/v3' + endpoint, params=params, json=json)
 
         if response.status_code not in ['200', '201']:
             return False
@@ -35,22 +36,15 @@ class radarr:
             return data
 
     def getProfiles(self):
-        return self.get('/v3/qualityprofile')
+        return self.get('/qualityprofile')
 
     def addMovie(self, movie):
         movie.update({
-        "monitored":True,
-        "profileId": self.profileId,
-        "episodeFileCount": 0,
-        "episodeCount": 0,
-        "isExisting": False,
-        "saved": False,
-        "deleted": False,
+        "qualityProfileId": self.profileId,
         "rootFolderPath": self.customFolder,
+        "monitored": True,
         "addOptions": {
-            "ignoreEpisodesWithFiles":False,
-            "ignoreEpisodesWithoutFiles":False,
-            "searchForMovie":True
+            "searchForMovie": True
         },
         })
         response = self.post('/movie', json=movie)
