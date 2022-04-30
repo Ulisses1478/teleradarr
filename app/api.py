@@ -43,7 +43,7 @@ class radarr:
         "rootFolderPath": self.customFolder,
         "monitored": "true",
         "addOptions": {
-            "searchForMovie":true
+            "searchForMovie": "true"
         },
         })
         response = self.post('/movie', json=movie)
