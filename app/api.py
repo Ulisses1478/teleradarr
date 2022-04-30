@@ -11,7 +11,7 @@ class radarr:
     def get(self, endpoint, params=None):
         if params:
             params['apikey'] = self.apiKey
-        return requests.get(self.baseUrl + '/api' + endpoint, params=params).json()
+        return requests.get(self.baseUrl + '/api/v3' + endpoint, params=params).json()
 
     def post(self, endpoint, json):
         params = {
@@ -26,7 +26,7 @@ class radarr:
         return response.json()
 
     def searchMovies(self, term, limit=0):
-        data = self.get('/v3/movie/lookup/', {
+        data = self.get('/movie/lookup/', {
             'term':term
         })
         if limit > 0:
@@ -35,25 +35,17 @@ class radarr:
             return data
 
     def getProfiles(self):
-        return self.get('/v3/qualityprofile')
+        return self.get('/qualityprofile')
 
     def addMovie(self, movie):
         movie.update({
-        "monitored":True,
-        "profileId": self.profileId,
-        "episodeFileCount": 0,
-        "episodeCount": 0,
-        "isExisting": False,
-        "saved": False,
-        "deleted": False,
+        "qualityProfileId": self.profileId,
         "rootFolderPath": self.customFolder,
         "addOptions": {
-            "ignoreEpisodesWithFiles":False,
-            "ignoreEpisodesWithoutFiles":False,
             "searchForMovie":True
         },
         })
-        response = self.post('/v3/movie', json=movie)
+        response = self.post('/movie', json=movie)
 
         if response:
             return True
