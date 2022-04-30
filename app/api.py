@@ -41,7 +41,7 @@ class radarr:
         movie.update({
         "qualityProfileId": self.profileId,
         "rootFolderPath": self.customFolder,
-        "monitored": true,
+        "monitored": "true",
         "addOptions": {
             "searchForMovie":true
         },
